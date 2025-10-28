@@ -1,16 +1,39 @@
-## Hi there 👋
+using DeveloperPortfolio;
 
-<!--
-**JahnviRawat/JahnviRawat** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+interface IDeveloperProfile
+{
+    string Name { get; }
+    string Title { get; }
+    void Introduce();
+}
 
-Here are some ideas to get you started:
+class StudentDeveloper : IDeveloperProfile
+{
+    public string Name => "Jahnvi Rawat";
+    public string Title => ".NET Developer";
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+    public void Introduce() =>
+        Console.WriteLine($"👋 Hi, I'm {Name}, a {Title} passionate about crafting clean, efficient, and scalable web applications.");
+}
+
+public class Bio : StudentDeveloper
+{
+    public string Company  = "Mphasis | Associate Software Developer";
+    public string Location = "Haridwar, Uttarakhand, IN";
+    public string Email    = "jahnvirawat20@gmail.com";
+    public string LinkedIn = "linkedin.com/in/jahnvi-rawat";
+    public string GitHub   = "github.com/JahnviRawat";
+}
+
+public class Skills : StudentDeveloper
+{
+    public string[] Languages  = { "C#", "C++", "JavaScript", "TypeScript" };
+    public string[] Frameworks = { ".NET Core", "ASP.NET MVC", "Entity Framework", "Angular", "Bootstrap" };
+    public string[] Databases  = { "SQL Server", "DBMS Concepts" };
+    public string[] Tools      = { "Git", "GitHub", "Visual Studio", "Linux CLI", "Shell Scripting" };
+    public string[] Projects   = {
+        "🧬 Vaccine Management System — ASP.NET Core MVC, Web API, Unit Testing",
+        "🧾 Customer Management — WinForms, Entity Framework",
+        "🍕 Cheese Drip — Angular, TypeScript, Bootstrap"
+    };
+}
